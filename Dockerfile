@@ -9,6 +9,9 @@ RUN apt-get install -y mysql-client;
 # Install postgresql client
 RUN apt-get install -y postgresql-client;
 
+# Install DBD::mysql Perl module
+RUN apt-get install -y libdbd-mysql-perl;
+
 WORKDIR /usr/src/sqitch-project;
 
 ENV DB_ENGINE=mysql

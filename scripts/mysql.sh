@@ -24,7 +24,7 @@ if [ $? -ne 0 ]; then
   mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST -P $MYSQL_PORT -e "create database $MYSQL_DATABASE";
 fi
 
-cd ./sqitch-project;
+cd /usr/src/sqitch-project;
 
 pwd;
 
