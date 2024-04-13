@@ -24,7 +24,6 @@ ENV MYSQL_DATABASE=database
 COPY ./scripts/run.sh /usr/src/run.sh
 COPY ./scripts/mysql.sh /usr/src/mysql.sh
 COPY ./scripts/postgres.sh /usr/src/postgres.sh
-COPY ./scripts/postgres.sh /usr/src/replace-project.sh
 
 
 CMD ["/usr/src/run.sh"]

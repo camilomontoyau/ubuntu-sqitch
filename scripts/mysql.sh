@@ -29,7 +29,7 @@ cd /usr/src/sqitch-project;
 pwd;
 
 # Deploy changes to database
-sqitch deploy db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE;
+sqitch deploy db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --project-name $MYSQL_DATABASE
 
 
 
