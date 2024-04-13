@@ -29,7 +29,7 @@ cd /usr/src/sqitch-project;
 pwd;
 ls -la;
 
-sed -i '' 's/XXXXXXXXXXXXXXXXXXXX/YYYYYYYYYYYYYYYYYYYYY/g' "/usr/src/sqitch-project/sqitch.plan";
+sed -i'' 's/XXXXXXXXXXXXXXXXXXXX/YYYYYYYYYYYYYYYYYYYYY/g' "/usr/src/sqitch-project/sqitch.plan";
 
 # Deploy changes to database
 sqitch deploy db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE;
@@ -37,7 +37,7 @@ sqitch deploy db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MY
 # Verify changes
 sqitch verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE;
 
-sed -i '' 's/YYYYYYYYYYYYYYYYYYYYY/XXXXXXXXXXXXXXXXXXXX/g' "/usr/src/sqitch-project/sqitch.plan";
+sed -i'' 's/YYYYYYYYYYYYYYYYYYYYY/XXXXXXXXXXXXXXXXXXXX/g' "/usr/src/sqitch-project/sqitch.plan";
 
 
 
