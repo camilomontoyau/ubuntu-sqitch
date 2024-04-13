@@ -22,4 +22,4 @@ COPY ./scripts/run.sh /usr/src/run.sh
 COPY ./scripts/mysql.sh /usr/src/mysql.sh
 COPY ./scripts/postgres.sh /usr/src/postgres.sh
 
-CMD ["/usr/src/scripts/run.sh"]
+CMD ["/usr/src/run.sh"]
