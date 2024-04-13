@@ -26,6 +26,8 @@ fi
 
 cd /usr/src/sqitch-project;
 
+/usr/src/replace-project.sh;
+
 pwd;
 
 # Deploy changes to database
