@@ -8,13 +8,13 @@ echo "DB_ENGINE: $DB_ENGINE"
 # Check if DB_ENGINE is mysql
 if [ "$DB_ENGINE" = "mysql" ]; then
   # Run mysql.sh script
-  ./mysql.sh
+  /usr/src/mysql.sh
 fi
 
 # Check if DB_ENGINE is postgres
 if [ "$DB_ENGINE" = "postgres" ]; then
   # Run postgres.sh script
-  ./postgres.sh
+  /usr/src/postgres.sh
 fi
 
 echo "====  Done running database setup ===";
