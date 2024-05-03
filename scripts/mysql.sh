@@ -32,10 +32,7 @@ ls -la;
 sed -i'' "s/XXXXXXXXXXXXXXXXXXXX/$MYSQL_DATABASE/g" "/usr/src/sqitch-project/sqitch.plan";
 
 # Deploy changes to database
-sqitch deploy db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --mode change;
-
-# Verify changes
-sqitch verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE;
+sqitch deploy --verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --mode change;
 
 sed -i'' "s/$MYSQL_DATABASE/XXXXXXXXXXXXXXXXXXXX/g" "/usr/src/sqitch-project/sqitch.plan";
 
