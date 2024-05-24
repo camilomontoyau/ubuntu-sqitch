@@ -13,6 +13,7 @@ fi
 
 # Check if DB_ENGINE is postgres
 if [ "$DB_ENGINE" = "postgres" ]; then
+
   # Run postgres.sh script
   /usr/src/postgres.sh
 fi
