@@ -23,7 +23,7 @@ RUN pip3 install mysql-connector-python
 
 RUN pip3 install python-dotenv
 
-WORKDIR /usr/src/sqitch-project;
+
 
 ENV DB_ENGINE=mysql
 ENV MYSQL_USER=root
@@ -32,6 +32,12 @@ ENV MYSQL_HOST=mysql
 ENV MYSQL_PORT=3306
 ENV MYSQL_DATABASE=database
 
+#hacer copy de la carpeta de ping
+#hacer copy de ping.sh
+#hacer workdir para carpeta de ping en /usr/src
+
+
+WORKDIR /usr/src/sqitch-project;
 
 COPY ./scripts/run.sh /usr/src/run.sh
 COPY ./scripts/mysql.sh /usr/src/mysql.sh

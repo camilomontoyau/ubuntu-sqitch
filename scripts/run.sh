@@ -7,6 +7,8 @@ echo "DB_ENGINE: $DB_ENGINE"
 
 # Check if DB_ENGINE is mysql
 if [ "$DB_ENGINE" = "mysql" ]; then
+
+  # correr ping-mysql.sh
   # Run mysql.sh script
   /usr/src/mysql.sh
 fi
