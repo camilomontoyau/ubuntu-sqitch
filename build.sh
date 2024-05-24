@@ -1,5 +1,5 @@
-account=$kerosine
-version=$3.17
+account=$1
+version=$2
 
 echo "Building $account/ubuntu-sqitch:$version image..."
 

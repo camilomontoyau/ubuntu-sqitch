@@ -31,6 +31,11 @@ ls -la;
 
 sed -i'' "s/XXXXXXXXXXXXXXXXXXXX/$MYSQL_DATABASE/g" "/usr/src/sqitch-project/sqitch.plan";
 
+# Crea las tablas de sqitch para poder hacer el insert
+sqitch deploy --verify --to-init;
+
+python3 /usr/src/sqitch-project/genesis_verify.py
+
 # Deploy changes to database
 sqitch deploy --verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --mode change;
 
