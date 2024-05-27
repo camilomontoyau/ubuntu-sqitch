@@ -7,10 +7,19 @@ echo "DB_ENGINE: $DB_ENGINE"
 
 # Check if DB_ENGINE is mysql
 if [ "$DB_ENGINE" = "mysql" ]; then
-
+  
+  cd /usr/src/ping-sqitch;
+  pwd;
+  ls -la;
+  
+  echo "Verificar el archivo de ping.sh";
   # correr ping-mysql.sh
+  ./ping.sh;
+
   # Run mysql.sh script
-  /usr/src/mysql.sh
+  cd ..;
+  pwd;
+  ./mysql.sh;
 fi
 
 # Check if DB_ENGINE is postgres
@@ -20,4 +29,4 @@ if [ "$DB_ENGINE" = "postgres" ]; then
   /usr/src/postgres.sh
 fi
 
-echo "====  Done running database setup ===";
+echo "====  Done running database setupp ===";

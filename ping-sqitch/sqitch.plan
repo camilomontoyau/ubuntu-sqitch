@@ -1,0 +1,4 @@
+%syntax-version=1.0.0
+%project=ping-sqitch
+
+ping 2024-05-27T15:58:11Z ,,, <yeisonquintero@TECADMDBA001> # Create initial database
