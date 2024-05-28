@@ -35,11 +35,7 @@ sed -i'' "s/XXXXXXXXXXXXXXXXXXXX/$MYSQL_DATABASE/g" "/usr/src/sqitch-project/sqi
 # Run genesis_verify
 python3 /usr/src/sqitch-project/genesis_verify.py
 
-pwd;
-
 cd /usr/src/sqitch-project;
-
-ls -la;
 
 # Deploy changes to database
 sqitch deploy --verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --mode change;

@@ -8,17 +8,12 @@ echo "DB_ENGINE: $DB_ENGINE"
 # Check if DB_ENGINE is mysql
 if [ "$DB_ENGINE" = "mysql" ]; then
   
-  cd /usr/src/ping-sqitch;
-  pwd;
-  ls -la;
-  
-  echo "Verificar el archivo de ping.sh";
   # correr ping-mysql.sh
+  cd /usr/src/ping-sqitch;
   ./ping.sh;
-
+  
   # Run mysql.sh script
   cd ..;
-  pwd;
   ./mysql.sh;
 fi
 
