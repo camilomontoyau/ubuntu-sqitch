@@ -11,9 +11,12 @@ if [ "$DB_ENGINE" = "mysql" ]; then
   # correr ping-mysql.sh
   cd /usr/src/ping-sqitch;
   ./ping.sh;
-  
+  pwd;
+
+
   # Run mysql.sh script
-  cd ..;
+  cd ../;
+  pwd;
   ./mysql.sh;
 fi
 

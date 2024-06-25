@@ -22,6 +22,7 @@ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST -P $MYSQL_PORT -e "use $MY
 if [ $? -ne 0 ]; then
   echo "Creating database $MYSQL_DATABASE";
   mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST -P $MYSQL_PORT -e "create database $MYSQL_DATABASE";
+  mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST -P $MYSQL_PORT -e "create tablespace ts_$MYSQL_DATABASE";
 fi
 
 cd /usr/src/sqitch-project;
@@ -31,18 +32,30 @@ ls -la;
 
 sed -i'' "s/XXXXXXXXXXXXXXXXXXXX/$MYSQL_DATABASE/g" "/usr/src/sqitch-project/sqitch.plan";
 
-
+echo "estoy en el proyecto de sqitch";
 # Run genesis_verify
-python3 /usr/src/sqitch-project/genesis_verify.py
+python3 /usr/src/sqitch-project/genesis_verify.py;
+
+head /usr/src/sqitch-project/sqitch.plan;
 
 cd /usr/src/sqitch-project;
 
+pwd;
+
+echo "YA VA EJECUTAR EL DEPLOY";
 # Deploy changes to database
-sqitch deploy --verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --mode change;
+echo "MYSQL_USER: $MYSQL_USER";
+echo "MYSQL_PASSWORD: $MYSQL_PASSWORD";
+echo "MYSQL_DATABASE: $MYSQL_DATABASE";
+echo "MYSQL_HOST: $MYSQL_HOST";
+echo "MYSQL_PORT: $MYSQL_PORT";
+
+sqitch deploy --verify db:mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE --mode change  -f /usr/src/sqitch-project/sqitch.plan;
 
 sed -i'' "s/$MYSQL_DATABASE/XXXXXXXXXXXXXXXXXXXX/g" "/usr/src/sqitch-project/sqitch.plan";
 
-cat /usr/src/sqitch-project/sqitch.plan;
+
+
 
 
 
